@@ -7,10 +7,6 @@ import { Remote, Response} from '../../remote';
 
 const logger = getLogger('game', path.basename(__filename));
 
-export default function (app: Application): SceneRemote {
-  return new SceneRemote(app);
-}
-
 // UserRpc的命名空间自动合并
 declare global {
   interface UserRpc {
@@ -79,4 +75,9 @@ export class SceneRemote extends Remote {
 
     return this.success();
   }
+}
+
+
+export default function (app: Application): SceneRemote {
+  return new SceneRemote(app);
 }

@@ -18,10 +18,6 @@ export const enum EventRoute {
   OnPlayerOpen = 'OnPlayerOpen'
 }
 
-export default function (app: Application) {
-  return new Push(app);
-}
-
 export class Push implements IComponent {
 
   public name = 'push';
@@ -95,4 +91,9 @@ export class Push implements IComponent {
     await this.app.channelService.abroadcast('connector', route, msg);
   }
 }
+
+export default function (app: Application) {
+  return new Push(app);
+}
+
 

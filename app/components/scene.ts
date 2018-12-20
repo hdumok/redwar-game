@@ -5,10 +5,6 @@ import { getLogger } from 'pinus-logger';
 
 const logger = getLogger('game', path.basename(__filename));
 
-export default function (app: Application) {
-  return new Scene(app);
-}
-
 export class Scene implements IComponent {
 
   public name = 'scene';
@@ -41,4 +37,8 @@ export class Scene implements IComponent {
   public async setCount (count): Promise<void> {
     await this.store.zadd('count', `${this.app.getServerId()}`, count);
   }
+}
+
+export default function (app: Application) {
+  return new Scene(app);
 }

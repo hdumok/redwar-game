@@ -6,10 +6,6 @@ import { Handler, Response } from '../../handler';
 
 const logger = getLogger('game', path.basename(__filename));
 
-export default function (app: Application) {
-  return new EntryHandler(app);
-}
-
 export class EntryHandler extends Handler {
 
   constructor (app){
@@ -102,4 +98,8 @@ export class EntryHandler extends Handler {
       return this.fail(err);
     }
   }
+}
+
+export default function (app: Application) {
+  return new EntryHandler(app);
 }

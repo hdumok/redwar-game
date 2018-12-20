@@ -11,9 +11,6 @@ interface PacketItem {
   turns: number,
   award: number
 }
-export default function (app: Application) {
-  return new Packet(app);
-}
 
 export class Packet implements IComponent {
 
@@ -112,4 +109,8 @@ export class Packet implements IComponent {
 
     return value;
   }
+}
+
+export default function (app: Application) {
+  return new Packet(app);
 }

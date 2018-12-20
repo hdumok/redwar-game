@@ -5,9 +5,6 @@ import { Application, IComponent } from 'pinus';
 import { getLogger } from 'pinus-logger';
 
 const logger = getLogger('game', path.basename(__filename));
-export default function (app: Application) {
-  return new Store(app);
-}
 
 export class Store implements IComponent {
   public name = 'store';
@@ -54,4 +51,8 @@ export class Store implements IComponent {
     });
     return client;
   }
+}
+
+export default function (app: Application) {
+  return new Store(app);
 }

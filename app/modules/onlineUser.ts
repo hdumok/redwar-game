@@ -4,10 +4,6 @@ import { getLogger } from 'pinus-logger';
 
 const logger = getLogger('game', __filename);
 
-export default function (app) {
-  return new Module(app);
-}
-
 export class Module implements IModule {
   public moduleId = 'onlineUser';
   public type = ModuleType.pull;
@@ -48,4 +44,8 @@ export class Module implements IModule {
   public clientHandler (agent, msg, cb) {
     cb(null, agent.get(this.moduleId));
   }
+}
+
+export default function (app) {
+  return new Module(app);
 }

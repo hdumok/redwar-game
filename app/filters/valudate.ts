@@ -14,10 +14,6 @@ import { getLogger } from 'pinus-logger';
 const logger = getLogger('game', path.basename(__filename));
 
 
-export default function (app: Application) {
-  return new ValudateFilter(app);
-}
-
 export class ValudateFilter implements IHandlerFilter {
   public app: Application;
   constructor (app: Application) {
@@ -69,4 +65,9 @@ export class ValudateFilter implements IHandlerFilter {
       logger.info(`uid:${session.uid} sid:${session.id} status:${resp.code} response2:`, resp);
       next(null, resp);
   }
+}
+
+
+export default function (app: Application) {
+  return new ValudateFilter(app);
 }

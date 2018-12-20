@@ -1,11 +1,12 @@
 {
-  "name": "pinus_sequelize",
+  "name": "redwar-pinus",
   "version": "1.0.0",
   "private": false,
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "start": "npm run build && cd dist && node app",
-    "robot": "npm run build && cd dist && node robot"
+    "robot": "npm run build && cd dist && node robot",
+    "lint": "tslint --project . -c tslint.json --fix"
   },
   "dependencies": {
     "@types/bluebird": "^3.5.19",
@@ -32,5 +33,10 @@
     "tslint": "5.9.1",
     "typescript": "^2.9.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hdumok/redwar-pinus"
+  },
+  "author": "hdumok",
   "license": "MIT"
 }

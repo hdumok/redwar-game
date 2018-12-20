@@ -5,10 +5,6 @@ import { Handler, Response } from '../../handler';
 
 const logger = getLogger('game', path.basename(__filename));
 
-export default function (app: Application) {
-  return new GateHandler(app);
-}
-
 export class GateHandler extends Handler{
   public async getServer (msg: any, session: FrontendSession): Promise<Response> {
 
@@ -37,4 +33,7 @@ export class GateHandler extends Handler{
       port: connector.clientPort
     });
   }
+}
+export default function (app: Application) {
+  return new GateHandler(app);
 }

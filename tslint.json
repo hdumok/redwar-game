@@ -1,11 +1,14 @@
 {
   "extends": "tslint:latest",
-  "exclude": [
-    "node_modules/**/*.ts"
-  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.ts",
+      "robot/*.ts"
+    ]
+  },
   "rules": {
     "quotemark": [true, "single"],
-    "member-ordering": [true, { "order": "fields-first" }],
+    "member-ordering": false,
     "variable-name": [true, "allow-snake-case", "allow-leading-underscore", "ban-keywords"], // 校验变量名
     "align": [true, "parameters", "arguments", "statements"], //检查参数对齐
     
@@ -30,7 +33,7 @@
     ],
     
     "adjacent-overload-signatures": true, // 定义函数时如果用到了覆写，则必须将覆写的函数写到一起
-    "return-undefined": true, // 使用 return; 而不是 return undefined;
+    "return-undefined": false, // 使用 return; 而不是 return undefined;
     "curly": [true, "ignore-same-line"], // if 后面必须有 {，除非是单行 if
       "forin": true, // for in 内部必须有 hasOwnProperty
       "no-empty": false, // 禁止出现空代码块，允许 catch 是空代码块

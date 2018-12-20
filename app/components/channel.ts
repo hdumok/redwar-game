@@ -7,10 +7,6 @@ import { getLogger } from 'pinus-logger';
 
 const logger = getLogger('game', path.basename(__filename));
 
-export default function (app: Application) {
-  return new Scene(app);
-}
-
 export class Scene implements IComponent, IStore {
 
   public name = 'channel';
@@ -56,4 +52,8 @@ export class Scene implements IComponent, IStore {
     });
     done();
   }
+}
+
+export default function (app: Application) {
+  return new Scene(app);
 }

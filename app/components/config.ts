@@ -11,10 +11,6 @@ interface AwardConfig {
   lei: number[],
 }
 
-export default function (app: Application) {
-  return new Config(app);
-}
-
 export class Config implements IComponent {
 
   public name = 'config';
@@ -77,4 +73,7 @@ export class Config implements IComponent {
 
     return config && config.value;
   }
+}
+export default function (app: Application) {
+  return new Config(app);
 }

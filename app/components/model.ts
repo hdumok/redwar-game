@@ -4,10 +4,6 @@
 import { Application, IComponent } from 'pinus';
 import { configure } from 'pinus-sequelize';
 
-export default function (app: Application) {
-  return new Model(app);
-}
-
 export class Model implements IComponent {
 
   public name = 'model';
@@ -20,4 +16,8 @@ export class Model implements IComponent {
     configure(this.app);
     cb();
   }
+}
+
+export default function (app: Application) {
+  return new Model(app);
 }

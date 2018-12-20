@@ -4,9 +4,6 @@ import { Application, FrontendOrBackendSession, HandlerCallback, IHandlerFilter,
 import { getLogger } from 'pinus-logger';
 
 const logger = getLogger('game', path.basename(__filename));
-export default function (app: Application) {
-  return new LoginFilter(app);
-}
 
 export class LoginFilter implements IHandlerFilter {
 
@@ -30,4 +27,8 @@ export class LoginFilter implements IHandlerFilter {
     //在after里，无法修改response的内容
     return next(err);
   }
+}
+
+export default function (app: Application) {
+  return new LoginFilter(app);
 }

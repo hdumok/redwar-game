@@ -6,10 +6,6 @@ import { getLogger } from 'pinus-logger';
 
 const logger = getLogger('game', path.basename(__filename));
 
-export default function (app: Application) {
-  return new Session(app);
-}
-
 export class Session implements IComponent {
 
   public name = 'session';
@@ -49,4 +45,8 @@ export class Session implements IComponent {
   private async setSession (token, content = {}) {
       await this.store.set(token, JSON.stringify(content));
   }
+}
+
+export default function (app: Application) {
+  return new Session(app);
 }

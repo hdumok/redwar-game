@@ -12,10 +12,6 @@ import { Handler, Response} from '../../handler';
 
 const logger = getLogger('game', path.basename(__filename));
 
-export default function (app: Application) {
-  return new SceneHandler(app);
-}
-
 export class SceneHandler extends Handler{
 
   /**
@@ -735,4 +731,8 @@ export class SceneHandler extends Handler{
       logger.error(e);
     }
   }
+}
+
+export default function (app: Application) {
+  return new SceneHandler(app);
 }

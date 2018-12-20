@@ -146,7 +146,7 @@ export class PinusWSClient {
     }
 
     // remove specific handler
-    let i = this.index(callbacks, (fn as any)._off || fn);
+    let i = this.index(callbacks, (fn)._off || fn);
     if (~i) {
       callbacks.splice(i, 1);
     }
