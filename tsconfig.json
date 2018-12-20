@@ -1,0 +1,49 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "types": ["node"],
+    "module": "commonjs", //指定生成哪个模块系统代码
+    "target": "es2017",
+    "lib": ["es2015", "es2016", "esnext.asynciterable"],
+    "rootDirs": ["."], //仅用来控制输出的目录结构--outDir。
+    "outDir": "./dist", //重定向输出目录。
+    "moduleResolution": "node",
+    "charset": "utf8",
+    "allowJs": false, //运行编译js
+    "noEmitOnError": false,
+    "noImplicitAny": false, // 在表达式和声明上有隐含的 any类型时报错
+    "noImplicitThis": false,  //不允许this隐式为any
+    "noUnusedLocals": false, //若有未使用的局部变量则抛错。
+    "allowUnusedLabels": false,
+    "noUnusedParameters": false, //若有未使用的参数则抛错。
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": false, //不允许swith case 穿透
+    "strictPropertyInitialization": false, //不允许contribute有参数
+    "watch": false, //在监视模式下运行编译器。会监视输出文件，在它们改变时重新编译。
+    "pretty": true,
+    "strict": false, // 启用所有严格类型检查选项
+    "alwaysStrict": false,  // 以严格模式检查每个模块，并在每个文件里加入 'use strict'
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "removeComments": true,  //编译后的代码移除注释
+    "inlineSourceMap": true,
+    "strictNullChecks": false, //不允许null、undefined赋值给其他类型
+    "noImplicitReturns": false, //不允许隐式的return
+    "preserveConstEnums": true, //保留 const和 enum声明。
+    "skipDefaultLibCheck": true,
+    "experimentalDecorators": true, // 启用装饰器
+    "emitDecoratorMetadata": true, // 为装饰器提供元数据的支持
+  },
+  "exclude": [
+    "./packages",
+    "./node_modules",
+  ],
+  "include": [
+    "./app/**/*.ts",
+    "./config/*.ts",
+    "./robot/*.ts",
+    "./app.ts",
+    "./preload.ts",
+    "./robot.ts",
+  ]
+}
