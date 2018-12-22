@@ -13,7 +13,6 @@ import { getLogger } from 'pinus-logger';
 
 const logger = getLogger('game', path.basename(__filename));
 
-
 export class ValudateFilter implements IHandlerFilter {
   public app: Application;
   constructor (app: Application) {
@@ -66,7 +65,6 @@ export class ValudateFilter implements IHandlerFilter {
       next(null, resp);
   }
 }
-
 
 export default function (app: Application) {
   return new ValudateFilter(app);

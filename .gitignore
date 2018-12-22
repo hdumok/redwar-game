@@ -6,6 +6,4 @@ logs/
 .DS_Store
 .vscode
 yarn-error.log
-*.swp
 *.log
-dist

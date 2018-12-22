@@ -34,6 +34,7 @@ export class GateHandler extends Handler{
     });
   }
 }
+
 export default function (app: Application) {
   return new GateHandler(app);
 }

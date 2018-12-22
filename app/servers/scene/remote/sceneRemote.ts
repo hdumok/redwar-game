@@ -77,7 +77,6 @@ export class SceneRemote extends Remote {
   }
 }
 
-
 export default function (app: Application): SceneRemote {
   return new SceneRemote(app);
 }
